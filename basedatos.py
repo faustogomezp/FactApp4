@@ -29,7 +29,7 @@ def buscar_cliente(cedula):
     else:
         return None
 
-def ingresar_cliente(clientes:Cliente):
+def ingresar_cliente(cliente:Cliente):
     if cliente.cedula in clientes:
         return False
     else:
