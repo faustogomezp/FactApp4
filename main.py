@@ -12,6 +12,7 @@ async def enlistar_clientes():
     #Devuelve el codigo http 200
     return  bd.lista_clientes()
 
+<<<<<<< HEAD
 @app.post("/clientes/agregar/")
 
 async def agregar_cliente(cliente: bd.Cliente):
@@ -22,3 +23,8 @@ async def agregar_cliente(cliente: bd.Cliente):
     else:
         raise HTTPException(status_code=400, detail="Cliente existente") 
     
+=======
+#@app.post("/clientes/agregar/")
+
+#async def agregar_cliente(cliente: Cliente):
+>>>>>>> b71293a8726eaf60a090d3c715b5118d62d90bfd
