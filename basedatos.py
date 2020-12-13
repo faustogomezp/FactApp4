@@ -52,8 +52,9 @@ class Usuario(BaseModel):
     alias: str
     password: str
     celular: int
+    rol: int
 
 usuarios={
-    1: Usuario(cedula=54526581, nombre="sandra", apellido="rey", alias="sandrey", password="54ndr3y", celular=38187417555, Rol=1),
-    2: Usuario(cedula=54526582, nombre="carlos", apellido="lópez", alias="carlitos1", password="c4rl05", celular=3215467895, Rol=3),
+    1: Usuario(cedula=54526581, nombre="sandra", apellido="rey", alias="sandrey", password="54ndr3y", celular=38187417555, rol=1),
+    2: Usuario(cedula=54526582, nombre="carlos", apellido="lópez", alias="carlitos1", password="c4rl05", celular=3215467895, rol=3),
 }
