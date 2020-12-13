@@ -29,14 +29,31 @@ def buscar_cliente(cedula):
     else:
         return None
 
-<<<<<<< HEAD
 def ingresar_cliente(cliente:Cliente):
-=======
-def ingresar_cliente(clientes:Cliente):
->>>>>>> b71293a8726eaf60a090d3c715b5118d62d90bfd
     if cliente.cedula in clientes:
         return False
     else:
         clientes[cliente.cedula]= cliente
         return True
+        
+class Rol(BaseModel):
+    id: int
+    tipo: str
 
+Roles={
+    1: Rol(id=1, tipo="administrador"),
+    2: Rol(id=2, tipo="supervisor"),
+    3: Rol(id=3, tipo="vendedor")
+}
+class Usuario(BaseModel):
+    cedula:int
+    nombre: str
+    apellido: str
+    alias: str
+    password: str
+    celular: int
+
+usuarios={
+    1: Usuario(cedula=54526581, nombre="sandra", apellido="rey", alias="sandrey", password="54ndr3y", celular=38187417555, Rol=1),
+    2: Usuario(cedula=54526582, nombre="carlos", apellido="lópez", alias="carlitos1", password="c4rl05", celular=3215467895, Rol=3),
+}
