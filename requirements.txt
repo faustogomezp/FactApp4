@@ -1,0 +1,5 @@
+pydantic
+fastapi
+python-jose-3.2.0
+pytohn-multipart-0.0.5
+passlib-1.7.4
