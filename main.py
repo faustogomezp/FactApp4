@@ -102,7 +102,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 async def read_users_me(current_user: User = Depends(get_current_active_user)):
     return current_user
 
-@app.post("/usuario/login/")
+@app.post("/usuario/login")
 async def auth_user(user_in: UserIn):
     user_in_db = usuarios_db.obtener_usuario(user_in.cedula)
     if user_in_db == None:
@@ -114,13 +114,13 @@ async def auth_user(user_in: UserIn):
     return {"mensaje": "Bienvenid@ "+user_in_db.nombre}
 
 #Petición a una ruta
-@app.get("/clientes/lista/")
+@app.get("/clientes/lista")
 #Asincrona, la función no se ejecuta constantemente con las demas funciones 
 async def enlistar_clientes():
     #Devuelve el codigo http 200
     return  clientes_db.lista_clientes()
 
-@app.post("/clientes/agregar/")
+@app.post("/clientes/agregar")
 async def agregar_cliente(cliente: clientes_db.ClienteDb):
     if userstatus.autenticado:
         operacion_exitosa = clientes_db.ingresar_cliente(cliente)
@@ -130,12 +130,12 @@ async def agregar_cliente(cliente: clientes_db.ClienteDb):
             raise HTTPException(status_code=400, detail="Cliente existente")
     return {"mensaje":"Debe autenticarse"} 
 
-@app.get("/usuarios/listado/")
+@app.get("/usuarios/listado")
 async def enlistar_usuarios():
     #Devuelve el codigo http 200
     return  usuarios_db.lista_usuarios()
 
-@app.post("/clientes/buscar/")
+@app.post("/clientes/buscar")
 async def buscar_clientes(cliente: BuscarClienteCedula):
     if userstatus.autenticado:
         operacion_exitosa = clientes_db.buscar_cliente(cliente.cedula)
