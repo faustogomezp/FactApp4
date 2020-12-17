@@ -27,6 +27,19 @@ fake_users_db = {
 
 
 app = FastAPI()
+
+app = FastAPI()
+userstatus = UserStatus()
+from fastapi.middleware.cors import CORSMiddleware
+origins = [
+"http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
+"http://localhost", "http://localhost:8080", "https://factapp412.herokuapp.com",
+]
+app.add_middleware(
+CORSMiddleware, allow_origins=origins,
+allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
+)
+
 userstatus = UserStatus()
 
 def fake_hash_password(password: str):
