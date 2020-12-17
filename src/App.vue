@@ -4,7 +4,7 @@
   <div class="header">
     <h1>FactApp4</h1>
     
-    <img src="./assets/logo.svg" width="110px">
+    <img src="./assets/logo.svg" class="logo">
   </div>
   <div class="main-component">
   <Index/>
@@ -40,31 +40,46 @@ export default {
 </script>
 
 <style>
-  body{
-    margin: 0 0 0 0;
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .logo{
+    width: 100px;
   }
   .header{
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 20vh;
+    min-width: 375px;
+    height: 150px;
     min-height: 100px;
     background-color: #4d4d4d ;
     color:#ffffff ;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: -20px;
 }
   .header h1{
-    width: 20%;
-    text-align:right;
+    width: auto;
     }
   .main-component{
     text-align:center;
     height: 130vh;
+    min-width: 375px;
+    width: auto;
     padding: 0%;
     background: #2d2d2d ;
-    color:#ffffff 
+    color:#ffffff;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 375px) {
+  .header{ 
+    flex-direction: row;
+  }
 }
 </style>

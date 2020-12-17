@@ -55,8 +55,21 @@ th,
 td {
   border: 1px solid rgb(96, 109, 187);
 }
+
+tr:first-child{
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #000;
+}
+
 table {
+  position: relative;
+  left: 50px;
   margin: auto;
+  width: 100%;
+  min-width: 375px;
+  display: block;
+  overflow-x: auto;
 }
 
   .header h2{
@@ -65,4 +78,10 @@ table {
     position: relative;
 
     }
+@media screen and (min-width: 375px) {
+  table {
+    width: 100%;
+    max-width: 800px;
+  }
+}
 </style>

@@ -34,7 +34,8 @@
             <template #icon>
               <i class='bx bx-door-open'></i>
             </template>
-            Iniciar sesión
+            
+            <a @click="navegarLogin">Iniciar sesión </a>
           </vs-sidebar-item>
           <vs-sidebar-item id="check-double">
             <template #icon>
@@ -135,6 +136,9 @@
     },
     navegarAgregarCliente: function() {
       this.$router.push({ name: "agregarCliente" });
+    },
+      navegarLogin: function() {
+      this.$router.push({ name: "inicioSesion" });
     }
   },
 
